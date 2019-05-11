@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "ruby_volt"
 
   # If you have other dependencies, add them here
-  s.add_dependency "minitest", "~> 5.13"
+  s.add_dependency "minitest", "~> 5.11"
   s.files        = Dir["{lib}/**/*.rb", "LICENSE", "*.md"]
   s.require_path = 'lib'
   s.license      = 'MIT'
