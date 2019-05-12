@@ -17,7 +17,7 @@ Protocol Version 1 (01/26/2016).
 
 Compatible with Ruby **MRI 2.5**> & **JRuby 9.2**>
 
-Previous versions can be supported easily, and you can do it yourself forking this code. However, performance *will probably drop* with previous versions or Ruby, which is essential, since we are dealing with a really fast database! On my laptop VoltDB is responding 2-5 times faster than Ruby can dispatch the response within one process and few threads.
+Previous versions can be supported easily, and you can do it yourself forking this code. However, performance *will probably drop* with previous versions or Ruby, which is essential, since we are dealing with a really fast database! On my laptop VoltDB responds 2-5 times faster than Ruby can dispatch the response within one process and few threads.
 
 ## Installation
 
@@ -273,10 +273,10 @@ Same methods *ping()* and *benchmark()* can be run for particular connection fro
     
 ##  Perfomance
 
-As said before, VoltDB is responding 2-5 times faster than Ruby can dispatch the result (depends on particular data structures), so in fact Ruby is a bottleneck.
+As said before, VoltDB responds 2-5 times faster than Ruby can dispatch the result (depends on particular data structures), so in fact Ruby is a bottleneck.
 
-By the way, RubyVolt is a threadsafe and only 1 thread serves 1 connection (1 thread/per connection) by default. My testing shows that there is no need to parallelize (*forking process*) or artificially increase the number of threads per connection, because the specific application in the real-world environment, for example **Puma** or **Unicorn**, will do it best of all.
+By the way, RubyVolt is a threadsafe and only 1 thread serves 1 connection (1 thread/per connection) by default. My tests show that there is no need to parallelize (*forking process*) or artificially increase the number of threads per connection, because the specific application in the real-world environment, for example **Puma** or **Unicorn**, will do it best of all.
 
-Therefore, in multi-threading or multi-processing environment you can squeeze maximum performance you can. In the MRI environment, multi-threading adds little to performance (~ 20% first 2 threads) due to GIL limitations, but multiprocessing (forking) makes this much better.
+Therefore, in multi-threading or multi-processing environment you can squeeze maximum performance you can. Within the MRI environment, multi-threading adds little to performance (~ 20% first 2 threads) due to GIL limitations, but multiprocessing (forking) makes it much better.
 
 However, multi-threading *JRuby performance* due to the use of all CPU cores in real time, is approximately two times higher than in MRI.
