@@ -196,7 +196,7 @@ VoltDB has two data structures for geospatial data:
 And official documentation says:
 *"It should be noted that, although a description of the GeographyPointValue/GeographyValue structure is being provided here for completeness, in most cases the client interface does not need to interpret the structure. Generally the client passes the point representation unchanged between the server and the client application.*
 
-However, for completeness, RubyVolt provides a classes for such structures.
+However, for completeness, RubyVolt provides classes for such structures.
 
 ### RubyVolt::Meta::Geography::Point
 
