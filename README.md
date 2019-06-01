@@ -41,7 +41,7 @@ Where *options* is a Hash with keys:
 | :username | default username for connection(s) if needed |
 | :password | default password for connection(s) if needed |
 | :connections | target number of connections to be enquired, if needed more than 1 by default |
-| :servicename | *'database' *by default (read VoltDB documentation) |
+| :servicename | 'database' by default (read VoltDB documentation) |
 | :connect_timeout | timeout (secs) for authentication, 8 by default |
 | :procedure_timeout | timeout (secs) for procedure call, 8 by default |
 | :login_protocol | VoltDB Client Wire Protocol version for authentication process, 1 by default |
