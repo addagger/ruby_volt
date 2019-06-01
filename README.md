@@ -34,21 +34,18 @@ Init the client with options:
     voltdb = RubyVolt::Base.new(options)
     
 Where *options* is a Hash with keys:
-    
-    :cluster - Hash, Array, String of VoltDB cluster:
-             - String URI: 1 connection to "your.server" or "your.server:21212" or "user:password@your.server:21212",
-             - Array of Strings: 1 connection per server ["first.server", "second.server:21213", "user@third.server"],
-             - Hash: where keys are Strings and values are numbers of connections to particular servers {"first.server" => 2, "second_server:21213" => 1}
-             - Nil: if option is not defined then 1 connection to 'localhost' with default port 21212.
-    
-    :username - default username for connection(s) if needed,
-    :password - default password for connection(s) if needed,
-    :connections - target number of connections to be enquired, if needed more than 1 by default,
-    :servicename - 'database' by default (see VoltDB documentation),
-    :connect_timeout - timeout (secs) for authentication, 8 by default, 
-    :procedure_timeout - timeout (secs) for procedure call, 8 by default,
-    :login_protocol - VoltDB Client Wire Protocol version for authentication process, 1 by default,
-    :procedure_protocol - VoltDB Client Wire Protocol version for procedure invocation, 0 by default,
+
+| Key | Value |
+| ------------ | ------------ |
+| :cluster | **String URI**: *"your.server"* or *"your.server:21212"* or *"user:password@your.server:21212"* (1 connection);<br><br>**Array of Strings**: *["first.server", "second.server:21213", "user@third.server"] *(1 connection per server);<br><br>**Hash**, where keys are strings and values are numbers of connections to particular servers: *{"first.server" => 2, "second_server:21213" => 1}*;<br><br>**Nil**: if option is not defined or Nil then 1 connection to *'localhost'* with default port *21212*. |
+| :username | default username for connection(s) if needed |
+| :password | default password for connection(s) if needed |
+| :connections | target number of connections to be enquired, if needed more than 1 by default |
+| :servicename | *'database' *by default (read VoltDB documentation) |
+| :connect_timeout | timeout (secs) for authentication, 8 by default |
+| :procedure_timeout | timeout (secs) for procedure call, 8 by default |
+| :login_protocol | VoltDB Client Wire Protocol version for authentication process, 1 by default |
+| :procedure_protocol | VoltDB Client Wire Protocol version for procedure invocation, 0 by default |
 
 General example:
 
@@ -194,7 +191,7 @@ VoltDB has two data structures for geospatial data:
 * *GeographyValue* represents polygons
 
 And official documentation says:
-*"It should be noted that, although a description of the GeographyPointValue/GeographyValue structure is being provided here for completeness, in most cases the client interface does not need to interpret the structure. Generally the client passes the point representation unchanged between the server and the client application.*
+> "It should be noted that, although a description of the GeographyPointValue/GeographyValue structure is being provided here for completeness, in most cases the client interface does not need to interpret the structure. Generally the client passes the point representation unchanged between the server and the client application."
 
 However, for completeness, RubyVolt provides classes for such structures.
 
@@ -271,7 +268,7 @@ Same methods *ping()* and *benchmark()* can be run for particular connection fro
     voltdb.connection_pool[1].ping
     voltdb.connection_pool[1].benchmark(100000)
     
-##  Perfomance
+##  Performance
 
 As said before, VoltDB responds 2-5 times faster than Ruby can dispatch the result (depends on particular data structures), so in fact Ruby is a bottleneck.
 
