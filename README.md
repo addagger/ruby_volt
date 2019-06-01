@@ -37,7 +37,7 @@ Where *options* is a Hash with keys:
 
 | Key | Value |
 | ------------ | ------------ |
-| :cluster | **String URI**: *"your.server"* or *"your.server:21212"* or *"user:password@your.server:21212"* (1 connection);<br><br>**Array of Strings**: *["first.server", "second.server:21213", "user@third.server"] *(1 connection per server);<br><br>**Hash**, where keys are strings and values are numbers of connections to particular servers: *{"first.server" => 2, "second_server:21213" => 1}*;<br><br>**Nil**: if option is not defined or Nil then 1 connection to *'localhost'* with default port *21212*. |
+| :cluster | **String URI**: "your.server" or "your.server:21212" or "user:password@your.server:21212" (1 connection);<br><br>**Array of Strings**: ["first.server", "second.server:21213", "user@third.server"] (1 connection per server);<br><br>**Hash**, where keys are strings and values are numbers of connections to particular servers: {"first.server" => 2, "second_server:21213" => 1};<br><br>**Nil**: if option is not defined or Nil then 1 connection to 'localhost' with default port 21212. |
 | :username | default username for connection(s) if needed |
 | :password | default password for connection(s) if needed |
 | :connections | target number of connections to be enquired, if needed more than 1 by default |
