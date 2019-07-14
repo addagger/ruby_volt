@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.description = "Pure Ruby client for VoltDB - one of the fastest in-memory databases on the planet. Threadsafe and fast enough wire client implementation, based on protocol specifications Version 1 (01/26/2016)."
   s.required_ruby_version = '>= 2.5.0'
   s.required_rubygems_version = ">= 1.3.6"
-  s.rubyforge_project         = "ruby_volt"
 
   # If you have other dependencies, add them here
   s.add_dependency "minitest", "~> 5.11"
